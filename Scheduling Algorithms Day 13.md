@@ -4,7 +4,7 @@
 
 ### Shortest Job First Algorithms(SJF):
 
-- In this algorithms the scheduler picks up the job/process with least burst time/execution time from the ready queue and dispatches it to the CPU  for execution.
+- In this algorithms the scheduler picks up the job/process with least burst time/execution time from the ready queue and dispatches it to the CPU for execution.
 - This is because in the FCFS we have observed that the if the intensive job comes first into the ready queue, it will be scheduled for execution. In this case the remaining processes should have to wait for long time for getting exceuted. The average waiting time of all the processes is high which leads to the convoy effect.
 - So, here we schedule the processes with least burst timme first.
 - At a given time there are many processes present in the ready queue. In that case the process with least burst time is scheduled for execution.
@@ -19,10 +19,11 @@ Example:
 ![Non-Primitive SJF](/Photos/Non-Primitive%20Shortest%20Job%20First%20Scheduling%20Algorithm.jpg)
 
 - In the example, we have observed that the total waiting time of all the processes is 31 and the average waiting time is 7.75.
-- The main disadvantage at time t = 0, if ther is only process p1 with the burst time 80 is present. It will get scheduled and it takes 80 units of time for completion. 
+- The main disadvantage at time t = 0, if ther is only process p1 with the burst time 80 is present. It will get scheduled and it takes 80 units of time for completion.
 - If there are other processes with less burst time after t > 0, the other processes should have to starve leading to increase in the average waiting time also known a s convoy effect.
 
 **Primitive SJF:**
+
 - For each second(assumption), the STS scheduler checks the ready queue and dispatches the process with the less burst time for execution.
 - Here the deciding factor is Arrival time + Burst Time + Preemption.
 
@@ -32,8 +33,7 @@ Example:
 
 - In the example, we have observed that the waiting time of all the processes is 26 and the average waiting time is 6.5.
 - Here there will be no problem of convoy effect because if there is a process p1 with burst time 80 at t = 0 is scheduled for execution, after 1 unit of time the SJS checks the ready queue for the process with least burst time.
-- If there is a process with less burst time present in the ready queue  the context switching happens and the process with least burst time will get executed. The processes with less burst time will no longer need to starve.
-
+- If there is a process with less burst time present in the ready queue the context switching happens and the process with least burst time will get executed. The processes with less burst time will no longer need to starve.
 
 ### Priority Scheduling Algorithm
 
@@ -48,6 +48,7 @@ Non-Primitive Priority Scheduling Algorithm:
 Example:
 
 ![Non-Primitive Priority Scheduling Algorithm](/Photos/Non-Primitive%20Priority%20Scheduling%20Algorithm.jpg)
+
 - From the example we have observed that the waiting time of all the processes is 67 and the average waiting time is 9.5
 - The main problem here is convoy effect because it there is a processes with least burst time but less priority and there are processes with higher priority the processes with least priority should keep on waiting which leads to increase in the average waiting time.
 - If the higher priority processes keep on comming the least priority processes should keep on waiting and leads to extreme convoy effect.
@@ -59,7 +60,7 @@ Primitive Priority Scheduling Algorithm:
 
 Example:
 
-![Primitive Priority Scheduling Algorithm](/Photos/Primitive%20Priority%20Scheduling%20ALgorithm.jpg)
+![Primitive Priority Scheduling Algorithm](/Photos/Primitive%20Priority%20Scheduling%20Algorithm.jpg)
 
 - In the above example we have observes that the waiting time of all the processes is 80 and the average waiting time is 11.4
 - In this algorithm there is the problem of context switching overhead because if the high priority process keep on comming for every 1 second the context switching will also happen for 1 sec.
@@ -92,12 +93,13 @@ There is rumour that the IBM 7094 system was launched at MIT in 1967. In that sy
 - It is easy to implememt.
 - It is designed for the time sharing systems. It is mainly used in the multi-tasking operating systems.
 - The deciding factor is Arrival Time and Time quantum.
-- In this algorithm a fixed time quantum is assigned for the each process after the process reaches its time quantum the os checks if the remaining burst time. 
+- In this algorithm a fixed time quantum is assigned for the each process after the process reaches its time quantum the os checks if the remaining burst time.
 - If the burst time is completed the process gets terminated otherwise the process is placed inside the queue again.
 
 Example:
 
 ![Round Robin Scheduling Algorithm](/Photos/Round%20Robin%20Scheduling%20Algorithm.jpg)
+
 - In the above example we have observed that the waiting time of all the processes is 38 and the average waiting time is 6.3
 - We noticed that the average waiting time is low. So, there will be no problem of starvation and convoy effect.
 - The main problem is overhead of context switching. In the above example, the time quantum is 2 and the context switching is also more. If the time quantum is 1 the context switching will be even more. Which will cause the high overload of the context switching.
