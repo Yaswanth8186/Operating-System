@@ -102,5 +102,6 @@ Example:
 
 - In the above example we have observed that the waiting time of all the processes is 38 and the average waiting time is 6.3
 - We noticed that the average waiting time is low. So, there will be no problem of starvation and convoy effect.
+- In round robin algorithm the response time of each process will be less and there is no starvation.
 - The main problem is overhead of context switching. In the above example, the time quantum is 2 and the context switching is also more. If the time quantum is 1 the context switching will be even more. Which will cause the high overload of the context switching.
 - It will be more efficient because here we are not depending on the burst time which is assumption.
